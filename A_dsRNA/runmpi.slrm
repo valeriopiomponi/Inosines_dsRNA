@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --job-name=run_job       # jobname
+#SBATCH --time=12:00:00          # walltime
+#SBATCH --nodes=2                # number of nodes
+#SBATCH --ntasks-per-node=4     # MPI tasks per single node
+#SBATCH -x cn11-02,cn11-03,cn11-04
+#SBATCH --cpus-per-task=16       # number of CPUs per MPI task
+#SBATCH -p gpu2                      # format as: <host>_<community>_<queue-type>; host(A1,A2,A3)=bdw,knl,skl; queue=dbg,prod,bprod
+#SBATCH --error myJob.err        # std-error file
+#SBATCH --output myJob.out       # std-output file
+#-------------------------------------------------------------------------
+FOLDER=${PWD##*/}
+cd $SLURM_SUBMIT_DIR
+module purge
+#module load gromacs/2019.4_bar_semiisotropic_surftens_plumed
+module load gromacs/2020.7_cr_plumed_2.8.0
+#mpirun -npernode 4 --bind-to none gmx_mpi mdrun -ntomp 16 -s md.tpr -nsteps 10000000  -maxh 12 -replex 100 -plumed plum_met.dat -multidir R0 R1 R2 R3 R4 R5 R6 R7 
+mpirun -npernode 4 --bind-to none gmx_mpi mdrun -ntomp 16 -s md.tpr -nsteps 10000000 -cpi state.cpt  -maxh 12 -replex 100 -plumed plum_restart.dat -multidir R0 R1 R2 R3 R4 R5 R6 R7 
+
+
+
