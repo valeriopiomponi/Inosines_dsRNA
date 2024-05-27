@@ -1,0 +1,140 @@
+# vim:ft=plumed
+MOLINFO STRUCTURE=../rna.pdb MOLTYPE=rna 
+PUCKERING ATOMS=@C4'-9,@O4'-9,@C1'-9,@C2'-9,@C3'-9 LABEL=puck9
+PUCKERING ATOMS=@C4'-10,@O4'-10,@C1'-10,@C2'-10,@C3'-10 LABEL=puck10
+PUCKERING ATOMS=@C4'-12,@O4'-12,@C1'-12,@C2'-12,@C3'-12 LABEL=puck12
+PUCKERING ATOMS=@C4'-30,@O4'-30,@C1'-30,@C2'-30,@C3'-30 LABEL=puck30
+
+PUCKERING ATOMS=@sugar-5 LABEL=puck5
+PUCKERING ATOMS=@sugar-6 LABEL=puck6
+PUCKERING ATOMS=@sugar-7 LABEL=puck7
+PUCKERING ATOMS=@sugar-8 LABEL=puck8
+PUCKERING ATOMS=@sugar-11 LABEL=puck11
+PUCKERING ATOMS=@sugar-13 LABEL=puck13
+PUCKERING ATOMS=@sugar-14 LABEL=puck14
+PUCKERING ATOMS=@sugar-15 LABEL=puck15
+PUCKERING ATOMS=@sugar-16 LABEL=puck16
+PUCKERING ATOMS=@sugar-25 LABEL=puck25
+PUCKERING ATOMS=@sugar-26 LABEL=puck26
+PUCKERING ATOMS=@sugar-27 LABEL=puck27
+PUCKERING ATOMS=@sugar-28 LABEL=puck28
+PUCKERING ATOMS=@sugar-29 LABEL=puck29
+PUCKERING ATOMS=@sugar-31 LABEL=puck31
+PUCKERING ATOMS=@sugar-32 LABEL=puck32
+PUCKERING ATOMS=@sugar-33 LABEL=puck33
+PUCKERING ATOMS=@sugar-34 LABEL=puck34
+PUCKERING ATOMS=@sugar-35 LABEL=puck35
+PUCKERING ATOMS=@sugar-36 LABEL=puck36
+
+
+t9: TORSION ATOMS=@H1'-9,@C1'-9,@C2'-9,@1H2'-9
+t10: TORSION ATOMS=@H1'-10,@C1'-10,@C2'-10,@1H2'-10
+t11: TORSION ATOMS=@H1'-11,@C1'-11,@C2'-11,@1H2'-11
+t12: TORSION ATOMS=@H1'-12,@C1'-12,@C2'-12,@1H2'-12
+t23: TORSION ATOMS=@H1'-23,@C1'-23,@C2'-23,@1H2'-23
+t29: TORSION ATOMS=@H1'-29,@C1'-29,@C2'-29,@1H2'-29
+t30: TORSION ATOMS=@H1'-30,@C1'-30,@C2'-30,@1H2'-30
+t31: TORSION ATOMS=@H1'-31,@C1'-31,@C2'-31,@1H2'-31
+t32: TORSION ATOMS=@H1'-32,@C1'-32,@C2'-32,@1H2'-32
+
+CUSTOM ...
+  LABEL=JCI9
+  ARG=t9,
+  VAR=x
+  FUNC=@replicas:(9.67*cos(x)*cos(x)-2.03*cos(x)),(9.67*cos(x)*cos(x)-2.03*cos(x))/1.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.1,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.7,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.2,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.9,(9.67*cos(x)*cos(x)-2.03*cos(x))/4.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/5.0
+  PERIODIC=NO
+... CUSTOM
+
+CUSTOM ...
+  LABEL=JCI10
+  ARG=t10,
+  VAR=x
+  FUNC=@replicas:(9.67*cos(x)*cos(x)-2.03*cos(x)),(9.67*cos(x)*cos(x)-2.03*cos(x))/1.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.1,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.7,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.2,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.9,(9.67*cos(x)*cos(x)-2.03*cos(x))/4.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/5.0
+  PERIODIC=NO
+... CUSTOM
+
+CUSTOM ...
+  LABEL=JCU11
+  ARG=t11,
+  VAR=x
+  FUNC=@replicas:(9.67*cos(x)*cos(x)-2.03*cos(x)),(9.67*cos(x)*cos(x)-2.03*cos(x))/1.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.1,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.7,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.2,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.9,(9.67*cos(x)*cos(x)-2.03*cos(x))/4.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/5.0
+  PERIODIC=NO
+... CUSTOM
+
+CUSTOM ...
+  LABEL=JCI12
+  ARG=t12,
+  VAR=x
+  FUNC=@replicas:(9.67*cos(x)*cos(x)-2.03*cos(x)),(9.67*cos(x)*cos(x)-2.03*cos(x))/1.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.1,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.7,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.2,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.9,(9.67*cos(x)*cos(x)-2.03*cos(x))/4.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/5.0
+  PERIODIC=NO
+... CUSTOM
+
+CUSTOM ...
+  LABEL=JCU23
+  ARG=t23,
+  VAR=x
+  FUNC=@replicas:(9.67*cos(x)*cos(x)-2.03*cos(x)),(9.67*cos(x)*cos(x)-2.03*cos(x))/1.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.1,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.7,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.2,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.9,(9.67*cos(x)*cos(x)-2.03*cos(x))/4.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/5.0
+  PERIODIC=NO
+... CUSTOM
+
+CUSTOM ...
+  LABEL=JCU29
+  ARG=t29,
+  VAR=x
+  FUNC=@replicas:(9.67*cos(x)*cos(x)-2.03*cos(x)),(9.67*cos(x)*cos(x)-2.03*cos(x))/1.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.1,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.7,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.2,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.9,(9.67*cos(x)*cos(x)-2.03*cos(x))/4.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/5.0
+  PERIODIC=NO
+... CUSTOM
+
+CUSTOM ...
+  LABEL=JCI30
+  ARG=t30,
+  VAR=x
+  FUNC=@replicas:(9.67*cos(x)*cos(x)-2.03*cos(x)),(9.67*cos(x)*cos(x)-2.03*cos(x))/1.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.1,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.7,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.2,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.9,(9.67*cos(x)*cos(x)-2.03*cos(x))/4.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/5.0
+  PERIODIC=NO
+... CUSTOM
+
+CUSTOM ...
+  LABEL=JCU31
+  ARG=t31,
+  VAR=x
+  FUNC=@replicas:(9.67*cos(x)*cos(x)-2.03*cos(x)),(9.67*cos(x)*cos(x)-2.03*cos(x))/1.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.1,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.7,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.2,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.9,(9.67*cos(x)*cos(x)-2.03*cos(x))/4.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/5.0
+  PERIODIC=NO
+... CUSTOM
+
+CUSTOM ...
+  LABEL=JCU32
+  ARG=t32,
+  VAR=x
+  FUNC=@replicas:(9.67*cos(x)*cos(x)-2.03*cos(x)),(9.67*cos(x)*cos(x)-2.03*cos(x))/1.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.1,(9.67*cos(x)*cos(x)-2.03*cos(x))/2.7,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.2,(9.67*cos(x)*cos(x)-2.03*cos(x))/3.9,(9.67*cos(x)*cos(x)-2.03*cos(x))/4.5,(9.67*cos(x)*cos(x)-2.03*cos(x))/5.0
+  PERIODIC=NO
+... CUSTOM
+
+RESTRAINT ARG=JCI9,JCI10,JCU11,JCI12,JCU23,JCU29,JCI30,JCU31,JCU32 AT=0,0,0,0,0,0,0,0,0 SLOPE=-0.03462658*2.5,-0.13728662*2.5,-0.22873941*2.5,-0.17574112*2.5,0.01928418*2.5,0.04515955*2.5,-0.35349363*2.5,-0.22202193*2.5,-0.16201179*2.5
+
+
+METAD ARG=puck5.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500 FILE=HILLS_5  GRID_MIN=-pi, GRID_MAX=pi  RESTART=YES   
+METAD ARG=puck6.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500 FILE=HILLS_6  GRID_MIN=-pi, GRID_MAX=pi  RESTART=YES
+METAD ARG=puck7.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500 FILE=HILLS_7  GRID_MIN=-pi, GRID_MAX=pi  RESTART=YES
+METAD ARG=puck8.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500 FILE=HILLS_8  GRID_MIN=-pi, GRID_MAX=pi  RESTART=YES
+METAD ARG=puck9.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500 FILE=HILLS_9  GRID_MIN=-pi, GRID_MAX=pi  RESTART=YES
+METAD ARG=puck10.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_10  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES  
+METAD ARG=puck11.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_11  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck12.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_12  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck13.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_13  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck14.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_14  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck15.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_15  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck16.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_16  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck25.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_25  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck26.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_26  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck27.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_27  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck28.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_28  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck29.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_29  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck30.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_30  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck31.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_31  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck32.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_32  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck33.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_33  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck34.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_34  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck35.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_35  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+METAD ARG=puck36.Zx SIGMA=0.35 TAU=5 BIASFACTOR=@replicas:1,1.5,2.1,2.7,3.2,3.9,4.5,5.0  PACE=500  FILE=HILLS_36  GRID_MIN=-pi, GRID_MAX=pi RESTART=YES
+
+PRINT ARG=puck5.phs,puck5.Zx,puck5.Zy,puck6.phs,puck6.Zx,puck6.Zy,puck7.phs,puck7.Zx,puck7.Zy,puck8.phs,puck8.Zx,puck8.Zy,puck9.phs,puck9.Zx,puck9.Zy,puck10.phs,puck10.Zx,puck10.Zy,puck11.phs,puck11.Zx,puck11.Zy,puck12.phs,puck12.Zx,puck12.Zy,puck13.phs,puck13.Zx,puck13.Zy,puck14.phs,puck14.Zx,puck14.Zy,puck15.phs,puck15.Zx,puck15.Zy,puck16.phs,puck16.Zx,puck16.Zy,puck25.phs,puck25.Zx,puck25.Zy,puck26.phs,puck26.Zx,puck26.Zy,puck27.phs,puck27.Zx,puck27.Zy,puck28.phs,puck28.Zx,puck28.Zy,puck29.phs,puck29.Zx,puck29.Zy,puck30.phs,puck30.Zx,puck30.Zy,puck31.phs,puck31.Zx,puck31.Zy,puck32.phs,puck32.Zx,puck32.Zy,puck33.phs,puck33.Zx,puck33.Zy,puck34.phs,puck34.Zx,puck34.Zy,puck35.phs,puck35.Zx,puck35.Zy,puck36.phs,puck36.Zx,puck36.Zy, FILE=COLVAR STRIDE=500
