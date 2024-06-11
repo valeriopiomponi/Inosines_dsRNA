@@ -1,0 +1,36 @@
+#!/bin/bash
+#SBATCH --job-name=run_job       # jobname
+#SBATCH --time=12:00:00          # walltime
+#SBATCH --nodes=1                # number of nodes
+#SBATCH -w cn11-10
+#SBATCH --ntasks-per-node=1     # MPI tasks per single node
+#SBATCH --cpus-per-task=32        # number of CPUs per MPI task
+#SBATCH -p gpu2                      # format as: <host>_<community>_<queue-type>; host(A1,A2,A3)=bdw,knl,skl; queue=dbg,prod,bprod
+#SBATCH --error myJob.err        # std-error file
+#SBATCH --output myJob.out       # std-output file
+#-------------------------------------------------------------------------
+FOLDER=${PWD##*/}
+cd $SLURM_SUBMIT_DIR
+module purge
+module load gromacs/2020.3_crescale
+#******************************************
+#******************  MD *******************
+#******************************************
+#export GMXLIB=./forcefields
+#gmx_mpi grompp -f md.mdp -c npt.gro -p topol.top -o md_0_1.tpr
+#gmx_mpi convert-tpr -s md_0_1.tpr -extend 400000 -o md_0_1.tpr
+#mpirun --bind-to none -npernode 1 gmx_mpi mdrun -deffnm md_0_1  -ntomp 8 -pin on -gpu_id 0 -cpi md_0_1.cpt
+#gmx_mpi trjcat -f R0/traj.trr R1/traj.trr R2/traj.trr R3/traj.trr R4/traj.trr R5/traj.trr R6/traj.trr R7/traj.trr -demux replica_index.xvg -o traj_0.trr traj_1.trr traj_2.trr traj_3.trr traj_4.trr traj_5.trr traj_6.trr traj_7.trr
+
+gmx_mpi trjcat -f traj_0.trr traj_1.trr traj_2.trr traj_3.trr traj_4.trr traj_5.trr traj_6.trr traj_7.trr -cat -o trajout.trr
+
+#for i in {0..15}
+#do
+g#mx_mpi mdrun -ntomp 32 -rerun trajout.trr -s lam$i/md_lam.tpr
+
+#cp ener.edr lam$i/ener_trj_conc.edr
+
+rm traj.trr
+rm traj_*
+
+#done
